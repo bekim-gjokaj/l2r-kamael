@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="474bf662767f4c95a797c9a9a77d913c" Name="Diagram1" >
+        <EntityTypeShape EntityType="Kamael.Packets" Width="1.25" PointX="8" PointY="4.375" />
+        <EntityTypeShape EntityType="Kamael.Users" Width="1.5" PointX="4.25" PointY="1.25" />
+        <EntityTypeShape EntityType="Kamael.Characters" Width="1.5" PointX="4.25" PointY="3.875" />
+        <AssociationConnector Association="Kamael.UsersCharacters" />
+        <AssociationConnector Association="Kamael.CharactersPackets" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Kamael.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="KamaelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Kamael" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="KamaelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Packets1" EntityType="Kamael.Packets" />
+          <EntitySet Name="Users1" EntityType="Kamael.Users" />
+          <EntitySet Name="Characters" EntityType="Kamael.Characters" />
+          <AssociationSet Name="UsersCharacters" Association="Kamael.UsersCharacters">
+            <End Role="Users" EntitySet="Users1" />
+            <End Role="Characters" EntitySet="Characters" />
+          </AssociationSet>
+          <AssociationSet Name="CharactersPackets" Association="Kamael.CharactersPackets">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="Packets" EntitySet="Packets1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Packets">
+          <Key>
+            <PropertyRef Name="PacketId" />
+          </Key>
+          <Property Name="PacketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CharacterId" Type="String" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="Kamael.CharactersPackets" FromRole="Packets" ToRole="Characters" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Characters" Relationship="Kamael.UsersCharacters" FromRole="Users" ToRole="Characters" />
+        </EntityType>
+        <EntityType Name="Characters">
+          <Key>
+            <PropertyRef Name="CharacterId" />
+          </Key>
+          <Property Name="CharacterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Kamael.UsersCharacters" FromRole="Characters" ToRole="Users" />
+          <NavigationProperty Name="Packets" Relationship="Kamael.CharactersPackets" FromRole="Characters" ToRole="Packets" />
+        </EntityType>
+        <Association Name="UsersCharacters">
+          <End Type="Kamael.Users" Role="Users" Multiplicity="1" />
+          <End Type="Kamael.Characters" Role="Characters" Multiplicity="*" />
+        </Association>
+        <Association Name="CharactersPackets">
+          <End Type="Kamael.Characters" Role="Characters" Multiplicity="1" />
+          <End Type="Kamael.Packets" Role="Packets" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Kamael" />
+        <Alias Key="Target" Value="Kamael.Store" />
+        <EntityContainerMapping CdmEntityContainer="KamaelContainer" StorageEntityContainer="KamaelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
