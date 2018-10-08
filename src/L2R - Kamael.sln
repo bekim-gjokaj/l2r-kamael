@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kamael.UI", "L2RKamaelUI\Kamael.UI.csproj", "{C88BD900-5B8C-4EEA-AFA4-133D1A07AD72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kamael.Packets", "Packets\Kamael.Packets.csproj", "{4F4CFC20-82DB-4A23-BC7F-6771F07B482F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{C88BD900-5B8C-4EEA-AFA4-133D1A07AD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C88BD900-5B8C-4EEA-AFA4-133D1A07AD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C88BD900-5B8C-4EEA-AFA4-133D1A07AD72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F4CFC20-82DB-4A23-BC7F-6771F07B482F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F4CFC20-82DB-4A23-BC7F-6771F07B482F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F4CFC20-82DB-4A23-BC7F-6771F07B482F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F4CFC20-82DB-4A23-BC7F-6771F07B482F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
