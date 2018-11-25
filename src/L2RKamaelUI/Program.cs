@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using Kamael;
+using L2RKamaelUI.UI;
 
 namespace Kamael.UI
 {
@@ -13,11 +15,10 @@ namespace Kamael.UI
         [STAThread]
         public static void Main(string[] args)
         {
-            Globals.args = args;
-
+           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new FormMain());
         }
     }
 }
