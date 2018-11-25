@@ -77,6 +77,7 @@
             this.button6.TabIndex = 10;
             this.button6.Text = "Packets";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
@@ -190,6 +191,7 @@
             this.btnHome.TabIndex = 4;
             this.btnHome.Text = "START";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // statusStrip1
             // 

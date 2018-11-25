@@ -1,6 +1,7 @@
 ﻿using Kamael.Packets;
 using Kamael.Packets.Character;
 using Kamael.Packets.Status;
+using L2RKamaelUI.UI;
 using SharpPcap;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,7 @@ namespace L2RKamaelUI
 {
     public partial class ControlHome : UserControl
     {
-        private L2RPacketService _L2RPacketLogger = new L2RPacketService(0);
-        private List<IL2RPacket> _Packets = new List<IL2RPacket>();
+        
 
         public ControlHome()
         {
@@ -26,8 +26,6 @@ namespace L2RKamaelUI
             chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
             chart1.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
             chart1.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
-            _L2RPacketLogger.L2RPacketArrivalEvent += OnL2RPacketArrival;
-            _L2RPacketLogger.StartCapture();
 
 
             foreach (var dev in CaptureDeviceList.Instance)
@@ -37,28 +35,12 @@ namespace L2RKamaelUI
             }
         }
 
-        private void OnL2RPacketArrival(object sender, L2RPacketArrivalEventArgs e)
-        {
-            try
-            {
-                //L2RPacketService proceesses the incoming payload and translates it to a concrete class
-                IL2RPacket l2rPacket = e.Packet;
-                if (l2rPacket != null)
-                {
-                    _Packets.Add(l2rPacket);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Process packet: " + ex.ToString());
-            }
-        }
-
         private void timerPackets_Tick(object sender, EventArgs e)
         {
             try
             {
-                List<IL2RPacket> tmpPackets = _Packets;
+                FormMain formMain = (FormMain)this.ParentForm;
+                List<IL2RPacket> tmpPackets = formMain._Packets;
 
                 //tmpPackets.Reverse();
                 txtConsole.Text = "";

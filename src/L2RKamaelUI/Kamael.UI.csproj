@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Be.Windows.Forms.HexBox.1.6.1\lib\net40\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
     <Reference Include="CsvHelper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.8.0.0-beta01\lib\net45\CsvHelper.dll</HintPath>
     </Reference>
@@ -48,7 +51,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Kamael.Packets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Kamael.Packets.1.0.0-CI-20181122-203022\lib\netstandard2.0\Kamael.Packets.dll</HintPath>
+      <HintPath>..\packages\Kamael.Packets.1.0.0-CI-20181125-125424\lib\netstandard2.0\Kamael.Packets.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -426,6 +429,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>L2RKamael.edmx</DependentUpon>
     </Compile>
+    <Compile Include="UI\ControlPackets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlPackets.Designer.cs">
+      <DependentUpon>ControlPackets.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ControlHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -446,6 +455,9 @@
     <Compile Include="UI\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ControlPackets.resx">
+      <DependentUpon>ControlPackets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlHome.resx">
       <DependentUpon>ControlHome.cs</DependentUpon>
     </EmbeddedResource>
