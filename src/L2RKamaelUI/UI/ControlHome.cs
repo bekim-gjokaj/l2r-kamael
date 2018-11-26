@@ -13,8 +13,6 @@ namespace L2RKamaelUI
 {
     public partial class ControlHome : UserControl
     {
-        
-
         public ControlHome()
         {
             InitializeComponent();
@@ -27,10 +25,9 @@ namespace L2RKamaelUI
             chart1.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
             chart1.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
 
-
-            foreach (var dev in CaptureDeviceList.Instance)
+            foreach (ICaptureDevice dev in CaptureDeviceList.Instance)
             {
-                var str = String.Format("{0} {1}", dev.Name, dev.Description);
+                string str = string.Format("{0} {1}", dev.Name, dev.Description);
                 comboBox1.Items.Add(str);
             }
         }
@@ -39,19 +36,23 @@ namespace L2RKamaelUI
         {
             try
             {
-                FormMain formMain = (FormMain)this.ParentForm;
-                List<IL2RPacket> tmpPackets = formMain._Packets;
+                FormMain formMain = (FormMain)ParentForm;
+                List<L2RPacketArrivalEventArgs> tmpPackets = formMain._Packets;
 
                 //tmpPackets.Reverse();
-                txtConsole.Text = "";
+                //txtConsole.Text = "";
 
-                foreach (IL2RPacket pkt in tmpPackets)
+                foreach (L2RPacketArrivalEventArgs pkt in tmpPackets)
                 {
-                    txtConsole.Text += pkt.GetType().ToString() + "\r\n";
+                    //txtConsole.Text += pkt.Packet.GetType().ToString() + "\r\n";
 
-                    if (pkt is PacketSightEnterNotify)
+                    if (pkt.Packet is PacketSightEnterNotify)
                     {
-                        UpdateMap(pkt);
+                        UpdateMapSightEnter(pkt.Packet);
+                    }
+                    else if (pkt.Packet is PacketStatusMovement)
+                    {
+                        UpdateMapMoveNotice(pkt.Packet);
                     }
                 }
             }
@@ -61,26 +62,73 @@ namespace L2RKamaelUI
             }
         }
 
-        private void UpdateMap(IL2RPacket pkt)
+        private void UpdateMapSightEnter(IL2RPacket pkt)
         {
             PacketSightEnterNotify pktSightEnter = (PacketSightEnterNotify)pkt;
             foreach (PacketOtherPlayer player in pktSightEnter.Players)
             {
-                if (chart1.Series.FindByName(player.PlayerName) == null)
+                if (chart1.Series.FindByName(player.PlayerUID.ToString()) == null)
                 {
-                    chart1.Series.Add(player.PlayerName);
-                    chart1.Series[player.PlayerName].ChartType = SeriesChartType.Point;
-                    chart1.Series[player.PlayerName].Points.AddXY(player.XPos, player.YPos);
-                    chart1.Series[player.PlayerName].ChartArea = "ChartArea1";
+                    chart1.Series.Add(player.PlayerUID.ToString());
+                    chart1.Series[player.PlayerUID.ToString()].ChartType = SeriesChartType.Point;
+                    chart1.Series[player.PlayerUID.ToString()].Points.AddXY(player.XPos, player.YPos);
+                    chart1.Series[player.PlayerUID.ToString()].ChartArea = "ChartArea1";
+                    chart1.Series[player.PlayerUID.ToString()].LegendText = player.PlayerName;
                 }
                 else
                 {
-                    foreach (DataPoint point in chart1.Series[player.PlayerName].Points)
+                    foreach (DataPoint point in chart1.Series[player.PlayerUID.ToString()].Points)
                     {
                         point.XValue = player.XPos;
                         point.YValues[0] = player.YPos;
                     }
                 }
+            }
+        }
+
+        private void UpdateMapMoveNotice(IL2RPacket pkt)
+        {
+            try
+            {
+
+                PacketStatusMovement pktStatMove = (PacketStatusMovement)pkt;
+
+                if (chart1.Series.FindByName(pktStatMove.playerId.ToString()) == null)
+                {
+                    decimal xpos = 0, ypos = 0;
+                    decimal.TryParse(pktStatMove.playerDestXpos.ToString(), out xpos);
+                    decimal.TryParse(pktStatMove.playerDestYpos.ToString(), out ypos);
+                    
+
+                    if (xpos != 0 && ypos != 0)
+                    {
+                        chart1.Series.Add(pktStatMove.playerId.ToString());
+                        chart1.Series[pktStatMove.playerId.ToString()].ChartType = SeriesChartType.Point;
+                        chart1.Series[pktStatMove.playerId.ToString()].Points.AddXY(xpos, ypos);
+                        chart1.Series[pktStatMove.playerId.ToString()].ChartArea = "ChartArea1"; 
+                    }
+                }
+                else
+                {
+                    foreach (DataPoint point in chart1.Series[pktStatMove.playerId.ToString()].Points)
+                    {
+                        decimal xpos, ypos;
+                        decimal.TryParse(pktStatMove.playerDestXpos.ToString(), out xpos);
+                        decimal.TryParse(pktStatMove.playerDestYpos.ToString(), out ypos);
+
+
+
+                        if (xpos != 0 && ypos != 0)
+                        {
+                            point.XValue = pktStatMove.playerDestXpos;
+                            point.YValues[0] = pktStatMove.playerDestYpos;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
     }

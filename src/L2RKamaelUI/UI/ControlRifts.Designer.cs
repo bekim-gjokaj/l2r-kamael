@@ -1,6 +1,6 @@
 ﻿namespace L2RKamaelUI
 {
-    partial class ControlPackets
+    partial class ControlRifts
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timerPackets = new System.Windows.Forms.Timer(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -42,9 +41,9 @@
             this.label1.Location = new System.Drawing.Point(13, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 23);
+            this.label1.Size = new System.Drawing.Size(68, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "🏠 Packets";
+            this.label1.Text = "🏠 Rifts";
             // 
             // timerPackets
             // 
@@ -52,23 +51,15 @@
             this.timerPackets.Interval = 500;
             this.timerPackets.Tick += new System.EventHandler(this.timerPackets_Tick);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(17, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1180, 516);
-            this.panel1.TabIndex = 1;
-            // 
-            // ControlPackets
+            // ControlRifts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ControlPackets";
+            this.Name = "ControlRifts";
             this.Size = new System.Drawing.Size(1225, 606);
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.ResumeLayout(false);
@@ -81,6 +72,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerPackets;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Panel panel1;
     }
 }

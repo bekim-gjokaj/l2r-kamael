@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnPackets = new System.Windows.Forms.Button();
+            this.btnTools = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRifts = new System.Windows.Forms.Button();
+            this.btnQuests = new System.Windows.Forms.Button();
+            this.btnFight = new System.Windows.Forms.Button();
+            this.btnHunt = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlHighlight = new System.Windows.Forms.Panel();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -52,45 +52,47 @@
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button7
+            // btnSettings
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(0, 474);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(200, 42);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Settings";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Location = new System.Drawing.Point(0, 474);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(200, 42);
+            this.btnSettings.TabIndex = 11;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // button6
+            // btnPackets
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(0, 426);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 42);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Packets";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnPackets.FlatAppearance.BorderSize = 0;
+            this.btnPackets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPackets.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPackets.ForeColor = System.Drawing.Color.White;
+            this.btnPackets.Location = new System.Drawing.Point(0, 426);
+            this.btnPackets.Name = "btnPackets";
+            this.btnPackets.Size = new System.Drawing.Size(200, 42);
+            this.btnPackets.TabIndex = 10;
+            this.btnPackets.Text = "Packets";
+            this.btnPackets.UseVisualStyleBackColor = true;
+            this.btnPackets.Click += new System.EventHandler(this.btnPackets_Click);
             // 
-            // button1
+            // btnTools
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 42);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Tools";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTools.FlatAppearance.BorderSize = 0;
+            this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTools.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTools.ForeColor = System.Drawing.Color.White;
+            this.btnTools.Location = new System.Drawing.Point(0, 384);
+            this.btnTools.Name = "btnTools";
+            this.btnTools.Size = new System.Drawing.Size(200, 42);
+            this.btnTools.TabIndex = 9;
+            this.btnTools.Text = "Tools";
+            this.btnTools.UseVisualStyleBackColor = true;
+            this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
             // 
             // panel3
             // 
@@ -124,57 +126,61 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Kamael";
             // 
-            // button5
+            // btnRifts
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 342);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 42);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Rifts";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnRifts.FlatAppearance.BorderSize = 0;
+            this.btnRifts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRifts.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRifts.ForeColor = System.Drawing.Color.White;
+            this.btnRifts.Location = new System.Drawing.Point(0, 342);
+            this.btnRifts.Name = "btnRifts";
+            this.btnRifts.Size = new System.Drawing.Size(200, 42);
+            this.btnRifts.TabIndex = 8;
+            this.btnRifts.Text = "Rifts";
+            this.btnRifts.UseVisualStyleBackColor = true;
+            this.btnRifts.Click += new System.EventHandler(this.btnRifts_Click);
             // 
-            // button4
+            // btnQuests
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 300);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 42);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Quests";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnQuests.FlatAppearance.BorderSize = 0;
+            this.btnQuests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuests.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuests.ForeColor = System.Drawing.Color.White;
+            this.btnQuests.Location = new System.Drawing.Point(0, 300);
+            this.btnQuests.Name = "btnQuests";
+            this.btnQuests.Size = new System.Drawing.Size(200, 42);
+            this.btnQuests.TabIndex = 7;
+            this.btnQuests.Text = "Quests";
+            this.btnQuests.UseVisualStyleBackColor = true;
+            this.btnQuests.Click += new System.EventHandler(this.btnQuests_Click);
             // 
-            // button3
+            // btnFight
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 258);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 42);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Fight";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnFight.FlatAppearance.BorderSize = 0;
+            this.btnFight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFight.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFight.ForeColor = System.Drawing.Color.White;
+            this.btnFight.Location = new System.Drawing.Point(0, 258);
+            this.btnFight.Name = "btnFight";
+            this.btnFight.Size = new System.Drawing.Size(200, 42);
+            this.btnFight.TabIndex = 6;
+            this.btnFight.Text = "Fight";
+            this.btnFight.UseVisualStyleBackColor = true;
+            this.btnFight.Click += new System.EventHandler(this.btnFight_Click);
             // 
-            // button2
+            // btnHunt
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 216);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 42);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Hunt";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnHunt.FlatAppearance.BorderSize = 0;
+            this.btnHunt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHunt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHunt.ForeColor = System.Drawing.Color.White;
+            this.btnHunt.Location = new System.Drawing.Point(0, 216);
+            this.btnHunt.Name = "btnHunt";
+            this.btnHunt.Size = new System.Drawing.Size(200, 42);
+            this.btnHunt.TabIndex = 5;
+            this.btnHunt.Text = "Hunt";
+            this.btnHunt.UseVisualStyleBackColor = true;
+            this.btnHunt.Click += new System.EventHandler(this.btnHunt_Click);
             // 
             // btnHome
             // 
@@ -224,15 +230,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSettings);
+            this.panel1.Controls.Add(this.btnPackets);
+            this.panel1.Controls.Add(this.btnTools);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnRifts);
+            this.panel1.Controls.Add(this.btnQuests);
+            this.panel1.Controls.Add(this.btnFight);
+            this.panel1.Controls.Add(this.btnHunt);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -243,19 +249,19 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Purple;
-            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.pnlHighlight);
             this.panel4.Location = new System.Drawing.Point(191, 174);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 42);
             this.panel4.TabIndex = 2;
             // 
-            // panel5
+            // pnlHighlight
             // 
-            this.panel5.BackColor = System.Drawing.Color.Purple;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 42);
-            this.panel5.TabIndex = 3;
+            this.pnlHighlight.BackColor = System.Drawing.Color.Purple;
+            this.pnlHighlight.Location = new System.Drawing.Point(0, 0);
+            this.pnlHighlight.Name = "pnlHighlight";
+            this.pnlHighlight.Size = new System.Drawing.Size(10, 42);
+            this.pnlHighlight.TabIndex = 3;
             // 
             // PanelMain
             // 
@@ -276,6 +282,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormMain";
             this.Text = "Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -289,23 +296,23 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnPackets;
+        private System.Windows.Forms.Button btnTools;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRifts;
+        private System.Windows.Forms.Button btnQuests;
+        private System.Windows.Forms.Button btnFight;
+        private System.Windows.Forms.Button btnHunt;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlHighlight;
         private System.Windows.Forms.Panel PanelMain;
     }
 }

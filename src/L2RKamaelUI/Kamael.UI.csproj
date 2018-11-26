@@ -38,9 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Be.Windows.Forms.HexBox, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Be.Windows.Forms.HexBox.1.6.1\lib\net40\Be.Windows.Forms.HexBox.dll</HintPath>
-    </Reference>
     <Reference Include="CsvHelper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.8.0.0-beta01\lib\net45\CsvHelper.dll</HintPath>
     </Reference>
@@ -51,7 +48,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Kamael.Packets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Kamael.Packets.1.0.0-CI-20181125-125424\lib\netstandard2.0\Kamael.Packets.dll</HintPath>
+      <HintPath>..\packages\Kamael.Packets.1.0.0-CI-20181125-223410\lib\netstandard2.0\Kamael.Packets.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -290,6 +287,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -429,6 +427,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>L2RKamael.edmx</DependentUpon>
     </Compile>
+    <Compile Include="UI\ControlFight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlFight.Designer.cs">
+      <DependentUpon>ControlFight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlTools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlTools.Designer.cs">
+      <DependentUpon>ControlTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlSettings.Designer.cs">
+      <DependentUpon>ControlSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlQuests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlQuests.Designer.cs">
+      <DependentUpon>ControlQuests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlRifts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlRifts.Designer.cs">
+      <DependentUpon>ControlRifts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlHunt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlHunt.Designer.cs">
+      <DependentUpon>ControlHunt.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ControlPackets.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -455,6 +489,24 @@
     <Compile Include="UI\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ControlFight.resx">
+      <DependentUpon>ControlFight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlTools.resx">
+      <DependentUpon>ControlTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlSettings.resx">
+      <DependentUpon>ControlSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlQuests.resx">
+      <DependentUpon>ControlQuests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlRifts.resx">
+      <DependentUpon>ControlRifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlHunt.resx">
+      <DependentUpon>ControlHunt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ControlPackets.resx">
       <DependentUpon>ControlPackets.cs</DependentUpon>
     </EmbeddedResource>

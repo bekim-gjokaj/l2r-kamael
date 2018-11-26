@@ -12,12 +12,12 @@ using static Kamael.Packets.L2RPacketService;
 
 namespace L2RKamaelUI
 {
-    public partial class ControlPackets : UserControl
+    public partial class ControlFight : UserControl
     {
         private L2RPacketService _L2RPacketLogger = new L2RPacketService(0);
         private List<L2RPacketArrivalEventArgs> _Packets = new List<L2RPacketArrivalEventArgs>();
 
-        public ControlPackets()
+        public ControlFight()
         {
             InitializeComponent();
         }
@@ -64,7 +64,7 @@ namespace L2RKamaelUI
                         
                         ByteViewer bv = new ByteViewer();
                         bv.SetBytes(packet.PacketBytes); // or SetBytes
-                        panel1.Controls.Add(bv);
+                        
                     }
                     
                 }
